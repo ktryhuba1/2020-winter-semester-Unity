@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
         if (collider2D.gameObject.tag.Equals("Wall"))
         {
-            y -= 0.1f;
+            y -= 0.4f;
             gameObject.transform.parent.GetComponent<enemyController>().X *= -1;
             gameObject.transform.parent.GetComponent<Transform>().Translate(0,y,0);
         }

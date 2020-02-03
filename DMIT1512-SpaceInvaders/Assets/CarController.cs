@@ -31,7 +31,8 @@ public class CarController : MonoBehaviour
         }
        else
         {
-           
+            Destroy(gameObject);
+            
         }
         
     }
