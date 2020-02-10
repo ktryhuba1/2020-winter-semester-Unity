@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -44,10 +44,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 679, y: 494}
-  m_MaxSize: {x: 14002, y: 14044}
+  m_MinSize: {x: 683, y: 494}
+  m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 114
+  controlID: 31
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 310
     height: 731
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -215,10 +215,10 @@ MonoBehaviour:
     y: 0
     width: 1226
     height: 731
-  m_MinSize: {x: 404, y: 494}
+  m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 52
+  controlID: 32
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -240,10 +240,10 @@ MonoBehaviour:
     y: 0
     width: 1226
     height: 442
-  m_MinSize: {x: 404, y: 222}
-  m_MaxSize: {x: 8004, y: 4022}
+  m_MinSize: {x: 406, y: 222}
+  m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 53
+  controlID: 33
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,20 +337,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ktryhuba1\Documents\GitHub\2020-winter-semester-Unity\sampleScenes
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 402f0000
-    m_LastClickedID: 12096
-    m_ExpandedIDs: 00000000ae2d000000ca9a3b
+    m_SelectedIDs: 262d0000
+    m_LastClickedID: 11558
+    m_ExpandedIDs: 00000000262d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -378,7 +378,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000262d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,9 +499,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a0320000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 529effff7c9effff20a2ffffe4a2ffffd2abffff6aafffff94afffffbeafffff4ab1ffffe2b1ffff0cb2ffff36b2ffff60b2ffff40b3ffff6eb3ffffb0b4ffffb2b7ffff1cb8ffff60baffffd0baffff44befffff4beffff26bfffffb6bfffffbabfffffbebfffff4ac5ffffa4c7ffffdcc9ffffd2caffffeecbffff50ceffff82ceffff16cfffff1ecfffffcadeffff8ce8ffffe8e8ffffc0f0ffff2cfaffff36faffff6cfbffff7436000086370000ea3b00005e3d00004e3f0000783f0000aa40000034410000cc41000058440000964400000a45000070460000e0460000a64a0000dc4a000000520000345200003e520000425700004e5700005a5700009c570000c6570000d2570000
+      m_SelectedIDs: 78f6ffff
+      m_LastClickedID: -2440
+      m_ExpandedIDs: 74fbffff98310000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
