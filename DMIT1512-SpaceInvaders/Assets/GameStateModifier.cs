@@ -61,9 +61,14 @@ public class GameStateModifier : MonoBehaviour
     {
         enemyCount = GameObject.FindGameObjectsWithTag("enemy").Length;
 
-        if((enemyCount != lastEnemyCount)&& SceneManager.GetActiveScene().buildIndex != 0)
-        score += 5;
-
+        if ((enemyCount < lastEnemyCount) && SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            score += 5;
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            score = 0;
+        }
         objScore = GameObject.FindGameObjectWithTag("score");
         objHealth = GameObject.FindGameObjectWithTag("health");
 
