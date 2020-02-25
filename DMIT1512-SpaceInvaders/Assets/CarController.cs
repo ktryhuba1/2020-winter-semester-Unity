@@ -21,7 +21,7 @@ public class CarController : MonoBehaviour
         timer = 0;
         index = SceneManager.GetActiveScene().buildIndex;
         gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateModifier>();
-
+        gameState.health = 3;
     }
 
     void Update()
@@ -43,6 +43,8 @@ public class CarController : MonoBehaviour
                 rightReached = false;
             }
             enemyCount = GameObject.FindGameObjectsWithTag("enemy").Length;
+            GameObject.FindGameObjectWithTag("enemyCount").GetComponent<Text>().text = "Ships: " + enemyCount;
+
 
             if (enemyCount == 0)
             {
@@ -75,6 +77,8 @@ public class CarController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D theThingIJustBumpedInto)
     {
+
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateModifier>();
         if (theThingIJustBumpedInto.gameObject.name.Equals("Wall (1)"))
         {
             rightReached = true;
@@ -85,7 +89,7 @@ public class CarController : MonoBehaviour
         }
         if(theThingIJustBumpedInto.gameObject.tag.Equals("Bullet"))
         {
-            gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateModifier>();
+            
             gameState.health--;
             Destroy(theThingIJustBumpedInto.gameObject);
 
@@ -96,5 +100,11 @@ public class CarController : MonoBehaviour
             }
 
         }
+        if(theThingIJustBumpedInto.gameObject.tag.Equals("enemy"))
+        {
+            gameState.health = 0;
+            alive = false;
+        }
+
     }
 }
