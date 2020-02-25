@@ -22,7 +22,7 @@ public class ProjectileShooter : MonoBehaviour
     private void OnDrawGizmos()
     {
         transform.position.Set(Offsetx + transform.position.x, transform.position.y + Offsety, transform.position.z + Offsetz);
-        Gizmos.color = Color.yellow;
+        Gizmos.color = Color.blue;
         Gizmos.DrawSphere(transform.position, 0.1f);
     }
 

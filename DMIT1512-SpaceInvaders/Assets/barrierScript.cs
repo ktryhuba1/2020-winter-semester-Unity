@@ -6,9 +6,7 @@ public class barrierScript : MonoBehaviour
 {
     float damage = 0;
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        
+    {       
         if (collision.tag.Equals("Bullet"))
         {
             Destroy(collision.gameObject);
@@ -22,6 +20,10 @@ public class barrierScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        else if (collision.tag.Equals("enemy"))
+        {
+            Destroy(gameObject);
         }
         else
         {

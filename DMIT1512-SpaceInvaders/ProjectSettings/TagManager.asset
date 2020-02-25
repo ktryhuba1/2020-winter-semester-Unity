@@ -8,6 +8,11 @@ TagManager:
   - Wall
   - enemy
   - player
+  - parent
+  - score
+  - Win
+  - Loss
+  - health
   layers:
   - Default
   - TransparentFX

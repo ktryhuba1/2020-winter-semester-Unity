@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -9,6 +11,18 @@ public class CarController : MonoBehaviour
     protected bool leftReached = false;
     protected bool rightReached = false;
     protected bool alive = true;
+    protected int enemyCount,parentCount,index, score;
+    protected float timer;
+    protected GameStateModifier gameState;
+
+    private void Start()
+    {
+        score = 0;
+        timer = 0;
+        index = SceneManager.GetActiveScene().buildIndex;
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateModifier>();
+
+    }
 
     void Update()
     {
@@ -28,17 +42,40 @@ public class CarController : MonoBehaviour
                 transform.Translate(translation * Time.deltaTime, Space.Self);
                 rightReached = false;
             }
+            enemyCount = GameObject.FindGameObjectsWithTag("enemy").Length;
+
+            if (enemyCount == 0)
+            {
+                timer += Time.deltaTime;
+                GameObject.FindGameObjectWithTag("Win").GetComponent<Canvas>().scaleFactor = 1;
+
+                if (timer > 3)
+                {
+                    if (index < 2)
+                    {
+                        SceneManager.LoadScene(index + 1);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene(0);
+                    }
+                }
+                
+            }
+            
+
         }
        else
         {
             Destroy(gameObject);
-            
+            GameObject.FindGameObjectWithTag("Loss").GetComponent<Canvas>().scaleFactor = 1;
+           // GameObject.FindGameObjectWithTag("score").GetComponent<Text>()
         }
-        
+
     }
     private void OnTriggerEnter2D(Collider2D theThingIJustBumpedInto)
     {
-        if (theThingIJustBumpedInto.gameObject.name.Equals("Wall (1)")) // .tag.Equals("Wall"))
+        if (theThingIJustBumpedInto.gameObject.name.Equals("Wall (1)"))
         {
             rightReached = true;
         }
@@ -48,9 +85,15 @@ public class CarController : MonoBehaviour
         }
         if(theThingIJustBumpedInto.gameObject.tag.Equals("Bullet"))
         {
-            alive = false;
+            gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateModifier>();
+            gameState.health--;
             Destroy(theThingIJustBumpedInto.gameObject);
-            gameObject.GetComponent<SpriteRenderer>().Equals(false);
+
+
+            if (gameState.health <= 0)
+            {
+                alive = false;
+            }
 
         }
     }
