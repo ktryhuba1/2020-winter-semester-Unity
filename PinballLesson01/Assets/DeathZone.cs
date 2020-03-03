@@ -7,9 +7,17 @@ public class DeathZone : MonoBehaviour
 
     public Transform ballspawnPoint;
     public GameObject ballPrefab;
+
+    private void Start()
+    {
+        GameObject newBall = Instantiate(ballPrefab);
+        newBall.transform.position = ballspawnPoint.position;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        // Destroy(collider.gameObject);
+        if(collider.tag.Equals("ball"))
         StartCoroutine(Wait(collider));     
     }
 
