@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
     protected Animator myAnimator;
     protected Rigidbody2D myRigidBody;
     protected float moveForce = 365;
-    protected bool facingRight = true;
+    internal bool facingRight = true;
     protected bool grounded = false;
     protected bool jump = false;
 
@@ -59,7 +59,7 @@ public class CharacterController : MonoBehaviour
 
 
     }
-    protected void Flip()
+    internal void Flip()
     {
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
@@ -69,6 +69,21 @@ public class CharacterController : MonoBehaviour
         theScale = backgroundImage.transform.localScale;
         theScale.x *= -1;
         backgroundImage.transform.localScale = theScale;
+
+        GameObject backgroundText = GameObject.FindGameObjectWithTag("Finish");
+        theScale = backgroundText.transform.localScale;
+        theScale.x *= -1;
+        backgroundText.transform.localScale = theScale;
+
+        GameObject backgroundButton = GameObject.FindGameObjectWithTag("Respawn");
+        theScale = backgroundButton.transform.localScale;
+        theScale.x *= -1;
+        backgroundButton.transform.localScale = theScale;
+
+        gameObject.GetComponentInChildren<ProjectileShooter>().projectilePrefab.GetComponent<Projectile>().direction.x *= -1;
+        theScale = gameObject.GetComponentInChildren<ProjectileShooter>().projectilePrefab.GetComponent<Projectile>().transform.localScale;
+        theScale.x *= -1;
+        gameObject.GetComponentInChildren<ProjectileShooter>().projectilePrefab.GetComponent<Projectile>().transform.localScale = theScale;
     }
 
 

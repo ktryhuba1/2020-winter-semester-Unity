@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name.Equals("groundCheck"))
+        if (collision.tag.Equals("Player"))
         {
-            //go to game over 
+            if(collision.GetComponent<CharacterController>().facingRight == false)
+            {
+                collision.GetComponent<CharacterController>().Flip();
+            }
+            SceneManager.LoadScene(0);
         }
-
-        Destroy(collision.gameObject);
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
